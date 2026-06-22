@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Library Management System</title>
+
+<style>
+/* Page layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f9;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Container */
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Category box */
+.category {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Category title (child selector) */
+.category > h2 {
+    text-align: center;
+    color: #34495e;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+/* Book card */
+.book {
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 5px solid #3498db;
+    background: #fafafa;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+/* DESCENDANT selector: styling inside book */
+.book .title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.book .author {
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+.book .desc {
+    font-size: 12px;
+    color: #555;
+}
+
+/* PSEUDO-CLASS: hover effect */
+.book:hover {
+    transform: scale(1.03);
+    background: #eaf6ff;
+    border-left-color: #e74c3c;
+}
+
+/* FIRST book in each category */
+.category .book:first-child {
+    border-left-color: #27ae60;
+    background: #e9fff1;
+}
+
+/* LAST book in each category */
+.category .book:last-child {
+    border-left-color: #8e44ad;
+    background: #f5e9ff;
+}
+
+/* Adjacent sibling combinator example */
+.title + .author {
+    margin-top: 2px;
+}
+
+/* General sibling selector example */
+.title ~ .desc {
+    margin-top: 5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Library Management System</h1>
+</header>
+
+<div class="library">
+
+    <!-- Fiction -->
+    <div class="category">
+        <h2>Fiction</h2>
+
+        <div class="book">
+            <div class="title">The Great Gatsby</div>
+            <div class="author">F. Scott Fitzgerald</div>
+            <div class="desc">A story of wealth, love, and the American dream.</div>
+        </div>
+
+        <div class="book">
+            <div class="title">1984</div>
+            <div class="author">George Orwell</div>
+            <div class="desc">A dystopian world under constant surveillance.</div>
+        </div>
+
+        <div class="book">
+            <div class="title">Harry Potter</div>
+            <div class="author">J.K. Rowling</div>
+            <div class="desc">A young wizard’s magical journey.</div>
+        </div>
+    </div>
+
+    <!-- Non Fiction -->
+    <div class="category">
+        <h2>Non-Fiction</h2>
+
+        <div class="book">
+            <div class="title">Sapiens</div>
+            <div class="author">Yuval Noah Harari</div>
+            <div class="desc">History of humankind and evolution.</div>
+        </div>
+
+        <div class="book">
+            <div class="title">Atomic Habits</div>
+            <div class="author">James Clear</div>
+            <div class="desc">Build good habits and break bad ones.</div>
+        </div>
+
+        <div class="book">
+            <div class="title">Educated</div>
+            <div class="author">Tara Westover</div>
+            <div class="desc">A memoir about learning and self-growth.</div>
+        </div>
+    </div>
+
+    <!-- Reference -->
+    <div class="category">
+        <h2>Reference</h2>
+
+        <div class="book">
+            <div class="title">Oxford Dictionary</div>
+            <div class="author">Oxford Press</div>
+            <div class="desc">Comprehensive English language reference.</div>
+        </div>
+
+        <div class="book">
+            <div class="title">Encyclopedia Britannica</div>
+            <div class="author">Britannica</div>
+            <div class="desc">General knowledge reference source.</div>
+        </div>
+
+        <div class="book">
+            <div class="title">World Atlas</div>
+            <div class="author">National Geographic</div>
+            <div class="desc">Detailed maps and geographical data.</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
